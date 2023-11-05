@@ -1,9 +1,11 @@
-### 👋 Hello, I'm Amna Shah.
-I'm a student at FAST NUCES.
+# 👋 Hello, I'm Amna Shah
 
-📚 Currently, I'm pursuing my Bachelor's degree in Computer Science.
+I'm a student at FAST NUCES, currently pursuing my Bachelor's degree in Computer Science.
+
 📫 You can reach me at amnashah834@gmail.com.
-"Code is like humor. When you have to explain it, it's bad." - Cory House
+
+> "Code is like humor. When you have to explain it, it's bad." - Cory House
+
 
 <!--
 **amnashah110/amnashah110** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
