@@ -1,5 +1,5 @@
 # 💫 About Me:
--CS student from Pakistan 🇵🇰<br>-Currently in my junior year at FAST-NUCES 🎓. <br>-Focused on mastering backend development 🤖 <br>-Solid grasp of frontend development too 💻. <br>-My tech stack of choice is the MERN stack 📈<br>-Strong foundation in MySQL as my database of choice 📊. <br>-Eager to expand my skillset and dive into the world of Cloud Computing ☁️ and Artificial Intelligence 🤖. <br>-When I'm not coding, you can find me solving puzzles 🧩 or immersed in mystery games 🕵️‍♀️ <br><br>-Let's collaborate and create together! 💻
+CS student from Pakistan 🇵🇰<br>Currently in my junior year at FAST-NUCES 🎓 <br>Focused on mastering backend development 🤖 <br>Solid grasp of frontend development too 💻<br>Well versed with a variety of Databases 📈 <br>Eager to expand my skillset and dive into the world of Cloud Computing ☁️ and Artificial Intelligence 🤖 <br>When I'm not coding, you can find me solving puzzles 🧩 or immersed in mystery games 🕵️‍♀️ <br><br>Let's collaborate and create together! 💻
 
 
 ## 🌐 Socials:
