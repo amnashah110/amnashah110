@@ -1,6 +1,12 @@
 # 💫 About Me:
 CS student from Pakistan 🇵🇰<br>Currently in my junior year at FAST-NUCES 🎓 <br>Focused on mastering backend development 🤖 <br>Solid grasp of frontend development too 💻<br>Well versed with a variety of Databases 📈 <br>Eager to expand my skillset and dive into the world of Cloud Computing ☁️ and Artificial Intelligence 🤖 <br>When I'm not coding, you can find me solving puzzles 🧩 or immersed in mystery games 🕵️‍♀️ <br><br>Let's collaborate and create together! 💻
 
+<p align="left">
+  <img
+    src="https://komarev.com/ghpvc/?username=amnashah110&label=Profile%20views&color=0e75b6&style=flat"
+    alt="amnashah110"
+  />
+</p>
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/amna-shah-16934424a/) 
