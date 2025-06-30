@@ -1,5 +1,5 @@
 # 💫 About Me
-CS student from Pakistan 🇵🇰<br>Currently in my junior year at FAST-NUCES 🎓 <br>Focused on mastering backend development 🤖 <br>Solid grasp of frontend development too 💻<br>Well versed with a variety of Databases 📈 <br>Eager to expand my skillset and dive into the world of Cloud Computing ☁️ and Artificial Intelligence 🤖 <br>When I'm not coding, you can find me solving puzzles 🧩 or immersed in mystery games 🕵️‍♀️ <br><br>Let's collaborate and create together! 💻
+CS student from Pakistan 🇵🇰<br>Currently in my senior year at FAST-NUCES 🎓 <br>Focused on mastering backend development 🤖 <br>Solid grasp of frontend development too 💻<br>Well versed with a variety of Databases 📈 <br>Eager to expand my skillset and dive into the world of Cloud Computing ☁️ and Artificial Intelligence 🤖 <br>When I'm not coding, you can find me solving puzzles 🧩 or immersed in mystery games 🕵️‍♀️ <br><br>Let's collaborate and create together! 💻
 
 <p align="center">
   <img src="https://i.pinimg.com/originals/72/0c/c4/720cc43d757ee638ad5054a05220fafe.gif" alt="Coding Cat GIF" width="700" />
