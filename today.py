@@ -257,7 +257,7 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
         loc = line.split()
         loc_add += int(loc[3])
         loc_del += int(loc[4])
-    return [loc_add, loc_del, loc_add - loc_del, cached]
+    return [loc_add, loc_del, loc_add + loc_del, cached]
 
 
 def flush_cache(edges, filename, comment_size):
@@ -321,7 +321,7 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
     """
     tree = etree.parse(filename)
     root = tree.getroot()
-    justify_format(root, 'age_data', age_data, 25)
+    justify_format(root, 'age_data', age_data, 51)
     justify_format(root, 'commit_data', commit_data, 22)
     justify_format(root, 'star_data', star_data, 14)
     justify_format(root, 'repo_data', repo_data, 6)
@@ -468,7 +468,6 @@ if __name__ == '__main__':
     for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index]) # format added, deleted, and total LOC
 
     svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
 
     # move cursor to override 'Calculation times:' with 'Total function time:' and the total function time, then move cursor back
     print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
