@@ -318,18 +318,70 @@ def stars_counter(data):
 def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
     """
     Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
+    Each line totals 71 chars: bullet + key + dots + value(s) + inter_text = 71
     """
     tree = etree.parse(filename)
     root = tree.getroot()
-    justify_format(root, 'age_data', age_data, 51)
-    justify_format(root, 'commit_data', commit_data, 22)
-    justify_format(root, 'star_data', star_data, 14)
-    justify_format(root, 'repo_data', repo_data, 6)
-    justify_format(root, 'contrib_data', contrib_data)
-    justify_format(root, 'follower_data', follower_data, 10)
-    justify_format(root, 'loc_data', loc_data[2], 9)
-    justify_format(root, 'loc_add', loc_data[0])
-    justify_format(root, 'loc_del', loc_data[1], 7)
+
+    def fmt(v):
+        if isinstance(v, int):
+            return f"{v:,}"
+        return str(v)
+
+    # Age: `. Uptime:dots value` = 71
+    # Fixed: `. Uptime:` (9) + 2 dot-span spaces = 11
+    # Dots = 71 - 11 - len(value) = 60 - len(value)
+    justify_format(root, 'age_data', age_data, 60)
+
+    # Repo line: `. Repos:rrr 44 {Contributed: 56} | Stars:sss 11` = 71
+    # Fixed: `. Repos:` (8) + ` {Contributed: ` (15) + `} | Stars:` (10) = 33
+    # Dot-span spaces: 2 spans × 2 spaces = 4  → total fixed = 37
+    # remaining = 71 - 37 - len(repo) - len(contrib) - len(star) = repo_dots + star_dots
+    repo = fmt(repo_data)
+    contrib = fmt(contrib_data)
+    star = fmt(star_data)
+    find_and_replace(root, 'repo_data', repo)
+    find_and_replace(root, 'contrib_data', contrib)
+    find_and_replace(root, 'star_data', star)
+
+    remaining = 71 - 37 - len(repo) - len(contrib) - len(star)
+    repo_dots = remaining // 2
+    star_dots = remaining - repo_dots
+    find_and_replace(root, 'repo_data_dots', ' ' + '.' * repo_dots + ' ')
+    find_and_replace(root, 'star_data_dots', ' ' + '.' * star_dots + ' ')
+
+    # Commit line: `. Commmits:ccc 1,063 | Followers:fff 23` = 71
+    # Fixed: `. Commmits:` (11) + ` | Followers:` (13) = 24
+    # Dot-span spaces: 2 × 2 = 4 → total fixed = 28
+    # remaining = 71 - 28 - len(commit) - len(follower) = commit_dots + follower_dots
+    commit = fmt(commit_data)
+    follower = fmt(follower_data)
+    find_and_replace(root, 'commit_data', commit)
+    find_and_replace(root, 'follower_data', follower)
+
+    remaining2 = 71 - 28 - len(commit) - len(follower)
+    commit_dots = remaining2 // 2
+    follower_dots = remaining2 - commit_dots
+    find_and_replace(root, 'commit_data_dots', ' ' + '.' * commit_dots + ' ')
+    find_and_replace(root, 'follower_data_dots', ' ' + '.' * follower_dots + ' ')
+
+    # LOC line: `. Lines of Code on GitHub:lll loc ( add++, dd del-- )` = 71
+    # Fixed: `. Lines of Code on GitHub:` (26) + ` ( ` (3) + `++, ` (4) + `-- )` (4) = 37
+    # Dot-span spaces: 2 × 2 = 4 → total fixed = 41
+    # remaining = 71 - 41 - len(loc) - len(add) - len(del) = loc_dots + del_dots
+    loc = fmt(loc_data[2])
+    add = fmt(loc_data[0])
+    dels = fmt(loc_data[1])
+    find_and_replace(root, 'loc_data', loc)
+    find_and_replace(root, 'loc_add', add)
+    find_and_replace(root, 'loc_del', dels)
+
+    remaining3 = 71 - 41 - len(loc) - len(add) - len(dels)
+    loc_dots = remaining3 // 2
+    del_dots = remaining3 - loc_dots
+    find_and_replace(root, 'loc_data_dots', ' ' + '.' * loc_dots + ' ')
+    find_and_replace(root, 'loc_del_dots', ' ' + '.' * del_dots + ' ')
+
     tree.write(filename, encoding='utf-8', xml_declaration=True)
 
 
